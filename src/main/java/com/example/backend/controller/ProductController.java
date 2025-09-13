@@ -19,6 +19,10 @@ public class ProductController {
   public ResponseEntity<List<ProductEntity>> createProduct(@RequestBody List<ProductEntity> product) {
     return ResponseEntity.ok(productRepo.saveAll(product));
   }
+  @PostMapping
+  public ResponseEntity<ProductEntity> createProduct(@RequestBody ProductEntity product) {
+    return ResponseEntity.ok(productRepo.save(product));
+  }
 
   @GetMapping
   public ResponseEntity<List<ProductEntity>> getProduct() {
