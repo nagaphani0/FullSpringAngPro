@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
-import {AsyncPipe} from '@angular/common';
+import { CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-products',
-  imports: [AsyncPipe],
+  imports: [CommonModule],
   templateUrl: './products.html',
   styleUrls: ['./products.css']
 })
@@ -19,14 +18,12 @@ export class Products implements OnInit {
 
   ngOnInit() {
     this.allProducts()
-    console.log(this.data);
-
   }
 
   allProducts(): void {
     this.http.get<any[]>(this.productsUrl).subscribe((data) => {
       this.data = data
-    console.log(this.data);
+    console.log(this.data)
     })
   }
 }

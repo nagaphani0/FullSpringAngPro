@@ -3,11 +3,12 @@ import {Login} from './admin/login/login';
 import {Landing} from './website/landing/landing';
 import {Layout} from './admin/layout/layout';
 import {Products} from './admin/products/products';
+import {CreateProduct} from './admin/create-product/create-product';
 
 export const routes: Routes = [
   {
     path: "",
-    redirectTo: 'login',
+    redirectTo: 'createProduct',
     pathMatch: 'full'
   },
   {
@@ -26,6 +27,10 @@ export const routes: Routes = [
         path: 'products',
         component: Products
 
+      },
+      {
+        path: 'createProduct',
+        component: CreateProduct
       },
     ]
   }

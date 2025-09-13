@@ -1,0 +1,34 @@
+<p>create-product works!</p>
+
+<form>
+<!--  "ProductId": 0,-->
+  <hr>
+  "ProductSku": "string",
+  <input type="text" name="ProductSku" [(ngModel)]="payload.ProductSku" >
+  <p>{{payload.ProductSku}}</p>
+  <hr>
+  "ProductName": "string",
+  <input type="text" name="ProductName"  [(ngModel)]="payload.ProductName" >
+  <hr>
+  "ProductPrice": 0,
+  <input type="text" name="ProductPrice" [(ngModel)]="payload.ProductPrice" >
+  <hr>
+  "ProductShortName": "string",
+  <input type="text" name="ProductShortName" [(ngModel)]="payload.ProductShortName" >
+  <hr>
+  "ProductDescription": "string",
+  <input type="text" name="ProductDescription" [(ngModel)]="payload.ProductDescription" >
+  <hr>
+  "CreatedDate": "2025-09-13T09:13:28.670Z"
+  <input type="text" name="CreatedDate" [(ngModel)]="payload.CreatedDate" >
+
+
+  "DeliveryTimeSpan":
+  <input type="text" name="DeliveryTimeSpan" [(ngModel)]="payload.DeliveryTimeSpan" >
+  "CategoryId": 0,
+  <input type="text" name="CategoryId" [(ngModel)]="payload.CategoryId" >
+  "ProductImageUrl": "string"
+  <input type="text" name="ProductImageUrl" [(ngModel)]="payload.ProductImageUrl" >
+
+  <input type="button" value="Create" (click)="createProduct()">
+</form>
