@@ -133,5 +133,23 @@ public class ProductEntity {
   public void setCategoryName(String categoryName) {
     this.categoryName = categoryName;
   }
+
+  @Override
+  public String toString() {
+    return "ProductEntity{" +
+      "id=" + id +
+      ", productSku='" + productSku + '\'' +
+      ", productName='" + productName + '\'' +
+      ", productPrice=" + productPrice +
+      ", productShortName='" + productShortName + '\'' +
+      ", productDescription='" + productDescription + '\'' +
+      ", createdDate='" + createdDate + '\'' +
+      ", lastModifiedDate='" + lastModifiedDate + '\'' +
+      ", deliveryTimeSpan='" + deliveryTimeSpan + '\'' +
+      ", categoryId=" + categoryId +
+      ", productImageUrl='" + productImageUrl + '\'' +
+      ", categoryName='" + categoryName + '\'' +
+      '}';
+  }
 }
 
