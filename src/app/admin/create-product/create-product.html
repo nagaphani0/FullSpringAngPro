@@ -4,31 +4,35 @@
 <!--  "ProductId": 0,-->
   <hr>
   "ProductSku": "string",
-  <input type="text" name="ProductSku" [(ngModel)]="payload.ProductSku" >
-  <p>{{payload.ProductSku}}</p>
+  <input type="text" name="ProductSku" [(ngModel)]="payload.productSku" >
+  <p>{{payload.productSku}}</p>
   <hr>
   "ProductName": "string",
-  <input type="text" name="ProductName"  [(ngModel)]="payload.ProductName" >
+  <input type="text" name="ProductName"  [(ngModel)]="payload.productName" >
   <hr>
   "ProductPrice": 0,
-  <input type="text" name="ProductPrice" [(ngModel)]="payload.ProductPrice" >
+  <input type="text" name="ProductPrice" [(ngModel)]="payload.productPrice" >
   <hr>
   "ProductShortName": "string",
-  <input type="text" name="ProductShortName" [(ngModel)]="payload.ProductShortName" >
+  <input type="text" name="ProductShortName" [(ngModel)]="payload.productShortName" >
   <hr>
   "ProductDescription": "string",
-  <input type="text" name="ProductDescription" [(ngModel)]="payload.ProductDescription" >
+  <input type="text" name="ProductDescription" [(ngModel)]="payload.productDescription" >
   <hr>
   "CreatedDate": "2025-09-13T09:13:28.670Z"
-  <input type="text" name="CreatedDate" [(ngModel)]="payload.CreatedDate" >
-
-
+  <input type="text" name="CreatedDate" [(ngModel)]="payload.createdDate" >
+  <hr>
   "DeliveryTimeSpan":
-  <input type="text" name="DeliveryTimeSpan" [(ngModel)]="payload.DeliveryTimeSpan" >
+  <input type="text" name="DeliveryTimeSpan" [(ngModel)]="payload.deliveryTimeSpan" >
+  <hr>
   "CategoryId": 0,
-  <input type="text" name="CategoryId" [(ngModel)]="payload.CategoryId" >
+  <input type="text" name="CategoryId" [(ngModel)]="payload.categoryId" >
+  <hr>
   "ProductImageUrl": "string"
-  <input type="text" name="ProductImageUrl" [(ngModel)]="payload.ProductImageUrl" >
+  <input type="text" name="ProductImageUrl" [(ngModel)]="payload.productImageUrl" >
+  <hr>
 
   <input type="button" value="Create" (click)="createProduct()">
 </form>
+  <hr>
+<app-products></app-products>
