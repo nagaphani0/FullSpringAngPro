@@ -68,7 +68,7 @@ export class Products implements OnInit {
     this.http.delete<void>(`${this.productsUrl}/${id}`).subscribe({
       next: () => {
         console.log('Product deleted successfully');
-        this.allProducts(); // Refresh product list
+        this.allProducts();
       },
       error: (err) => {
         console.error('Error deleting product:', err);
