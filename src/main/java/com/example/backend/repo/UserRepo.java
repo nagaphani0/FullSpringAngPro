@@ -1,10 +1,7 @@
 package com.example.backend.repo;
 
-
-import com.example.backend.entity.ProductEntity;
 import com.example.backend.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ProductRepo extends JpaRepository<ProductEntity, Long> {
+public interface UserRepo extends JpaRepository<UserEntity, Long> {
 }
-
