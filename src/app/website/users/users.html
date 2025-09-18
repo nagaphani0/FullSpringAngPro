@@ -1,0 +1,58 @@
+<div>
+  <h2>Create User</h2>
+<button class="btn btn-danger" type="button" (click)="CreateUser()" >Create User </button>
+</div>
+<div *ngIf="data?.length; else empty">
+  <div *ngFor="let data of data" class="card" style="width: 18rem;">
+    <img [src]='' class="card-img-top" alt="..." width="200px">
+    <div class="card-body">
+
+      <h5 class="card-text">{{ data.name }}</h5>
+      <p class="card-text">{{ data.mobileNo }}</p>
+      <h5 class="card-title">{{ data.password }}
+<!--        {{ data.id }}-->
+      </h5>
+
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <button class="btn btn-danger" type="button" (click)="Update(data)" >Update</button>
+      <button class="btn btn-dark" type="button" (click)="Delete(data.id)">Delete</button>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="showCreate">
+  <form>
+    <label>User Name:</label>
+    <input name="Name" [(ngModel)]="selectedUser.name"  />
+    <br />
+    <label>User Mobile:</label>
+    <input name="MobileNo" [(ngModel)]="selectedUser.mobileNo"  />
+    <br />
+    <label>User Password:</label>
+    <input name="password" [(ngModel)]="selectedUser.password"  />
+    <br />
+    <button (click)="createUser()">Save Changes</button>
+  </form>
+</div>
+
+<div *ngIf="showUpdate">
+  <form>
+    <label>Product Name:</label>
+    <input name="Name" [(ngModel)]="selectedUser.name"  />
+    <br />
+    <label>Product Name:</label>
+    <input name="MobileNo" [(ngModel)]="selectedUser.mobileNo"  />
+    <br />
+    <label>Product Name:</label>
+    <input name="password" [(ngModel)]="selectedUser.password"  />
+    <br />
+    <button (click)="saveChanges()">Save Changes</button>
+<!--        <button (click)="cancelUpdate()">Cancel</button>-->
+  </form>
+</div>
+<ng-template #empty>
+  <p>No products found.</p>
+</ng-template>
+
+

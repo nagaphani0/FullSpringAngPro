@@ -1,44 +1,50 @@
 <!--<p>products works!</p>-->
 
-<div *ngIf="data?.length; else empty">
-<div *ngFor="let data of data" class="card" style="width: 18rem;">
-  <img [src]=data.productImageUrl class="card-img-top" alt="..." width="200px">
-  <div class="card-body">
-
-    <h5 class="card-text">{{ data.length }}</h5>
-    <h5 class="card-title">{{ data.productName }}{{ data.id }}</h5>
-    <p class="card-text">{{ data.productDescription }}</p>
-    <p class="card-text">{{ data.productPrice }}</p>
-    <p class="card-text">{{ data.productShortName }}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-    <button class="btn btn-danger" type="button" (click)="Update(data)" >Update</button>
-    <button class="btn btn-dark" type="button" (click)="Delete(data.id)">Delete</button>
-</div>
+<div *ngIf="data; else empty">
+  <div class="row">
+    <div *ngFor="let product of data" class="col-md-4 mb-4">
+      <div class="card" style="width: 18rem;">
+        <img
+          [src]="product.productImageUrl || 'https://via.placeholder.com/150'"
+          class="card-img-top"
+          alt="{{ product.productName }}"
+          onError="this.src='https://via.placeholder.com/150?text=No+Image'">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.productName }} (ID: {{ product.id }})</h5>
+          <p class="card-text"><strong>Description:</strong> {{ product.productDescription }}</p>
+          <p class="card-text"><strong>Price:</strong> ${{ product.productPrice }}</p>
+          <p class="card-text"><strong>Short Name:</strong> {{ product.productShortName }}</p>
+<!--          <button class="btn btn-primary" (click)="Update(product)">Update</button>-->
+<!--          <button class="btn btn-danger ms-2" (click)="Delete(product.id)">Delete</button>-->
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 
-<div *ngIf="showUpdate">
-  <form>
-    <label>Product Name:</label>
-    <input name="productName" [(ngModel)]="selectedProduct.productName"  />
-    <br />
-    <label>Product Description:</label>
-    <input name="productDescription" [(ngModel)]="selectedProduct.productDescription" />
-    <br />
-    <label>Product Price:</label>
-    <input name="productPrice"  [(ngModel)]="selectedProduct.productPrice"/>
-    <br />
-    <label>Product Short Name:</label>
-    <input name="productShortName" [(ngModel)]="selectedProduct.productShortName" />
-    <br />
-    <label>Product Image URL:</label>
-    <input name="productImageUrl" [(ngModel)]="selectedProduct.productImageUrl" />
-    <br />
-    <button (click)="saveChanges()">Save Changes</button>
-<!--    <button (click)="cancelUpdate()">Cancel</button>-->
-  </form>
-</div>
+
+<!--<div *ngIf="showUpdate">-->
+<!--  <form>-->
+<!--    <label>Product Name:</label>-->
+<!--    <input name="productName" [(ngModel)]="selectedProduct.productName"  />-->
+<!--    <br />-->
+<!--    <label>Product Description:</label>-->
+<!--    <input name="productDescription" [(ngModel)]="selectedProduct.productDescription" />-->
+<!--    <br />-->
+<!--    <label>Product Price:</label>-->
+<!--    <input name="productPrice"  [(ngModel)]="selectedProduct.productPrice"/>-->
+<!--    <br />-->
+<!--    <label>Product Short Name:</label>-->
+<!--    <input name="productShortName" [(ngModel)]="selectedProduct.productShortName" />-->
+<!--    <br />-->
+<!--    <label>Product Image URL:</label>-->
+<!--    <input name="productImageUrl" [(ngModel)]="selectedProduct.productImageUrl" />-->
+<!--    <br />-->
+<!--    <button (click)="saveChanges()">Save Changes</button>-->
+<!--&lt;!&ndash;    <button (click)="cancelUpdate()">Cancel</button>&ndash;&gt;-->
+<!--  </form>-->
+<!--</div>-->
   <ng-template #empty>
     <p>No products found.</p>
   </ng-template>

@@ -1,4 +1,5 @@
 export interface ProductI{
+  // length: Boolean;
   "productId": number,
   "productSku": string,
   "productName": string,
@@ -9,4 +10,15 @@ export interface ProductI{
   "deliveryTimeSpan": string,
   "categoryId": number,
   "productImageUrl": string
+}
+
+export interface UserI{
+  "id": number,
+  "name": string,
+  "mobileNo": string,
+  "password": string
+}
+export interface ApiResponse {
+  message: string;
+  data: ProductI[];
 }

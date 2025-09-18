@@ -4,6 +4,7 @@ import {Landing} from './website/landing/landing';
 import {Layout} from './admin/layout/layout';
 import {Products} from './admin/products/products';
 import {CreateProduct} from './admin/create-product/create-product';
+import {Users} from './website/users/users';
 
 export const routes: Routes = [
   {
@@ -31,6 +32,11 @@ export const routes: Routes = [
       {
         path: 'createProduct',
         component: CreateProduct
+      },
+      {
+        path: 'user',
+        component: Users
+
       },
     ]
   }
